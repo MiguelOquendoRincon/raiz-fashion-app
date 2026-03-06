@@ -22,7 +22,7 @@ export default function Collection() {
                             }}
                         >
                             <div style={{ overflow: "hidden", borderRadius: 4, marginBottom: 20, aspectRatio: "3/4" }}>
-                                <img src={`https://placehold.co/400/533/4A6741/F5F0E8?text=Pieza+0${item.id}`} alt={item.title}
+                                <img src={item.img} alt={item.title}
                                     style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.5s ease", display: "block" }} />
                             </div>
                             <p style={{ fontFamily: "var(--font-sans)", fontSize: 10, letterSpacing: 2, color: "var(--color-mid-green)", marginBottom: 8 }}>0{item.id}</p>

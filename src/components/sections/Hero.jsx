@@ -19,7 +19,10 @@ export default function Hero() {
             {/* Content */}
             <div style={{ position: "relative", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100%", textAlign: "center", padding: "0 24px" }}>
                 <p style={{ fontFamily: "var(--font-sans)", fontSize: 12, letterSpacing: 4, color: "rgba(255,255,255,0.75)", marginBottom: 24, textTransform: "uppercase" }}>
-                    Proyecto de Grado · Diseño de Modas 2025
+                    Proyecto de Grado · Diseño de Modas 2026
+                    <br />
+                    <br />
+                    Derly Yuliana Barrios Florez · Karol Julieth Márquez Camacho
                 </p>
                 <h1 style={{
                     fontFamily: "var(--font-serif)", fontSize: "clamp(2.4rem, 6vw, 5rem)",
@@ -30,7 +33,7 @@ export default function Hero() {
                     Donde la tela se convierte<br />en lenguaje y el diseño en voz.
                 </h1>
                 <p style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "rgba(255,255,255,0.72)", letterSpacing: 1, marginBottom: 48, maxWidth: 460, lineHeight: 1.7 }}>
-                    Una colección que explora la identidad, la memoria y la forma a través de la moda contemporánea.
+                    Una colección que explora la identidad, la memoria y la forma a través de la moda contemporánea sin perder la esencia de lo organico.
                 </p>
                 <div style={{ display: "flex", gap: 16 }}>
                     <a href="#collection" style={{
@@ -60,7 +63,7 @@ export default function Hero() {
                 display: "flex", alignItems: "center", justifyContent: "center",
                 flexDirection: "column",
             }}>
-                <span style={{ fontFamily: "var(--font-serif)", fontSize: 9, color: "#fff", letterSpacing: 1, textAlign: "center", lineHeight: 1.3 }}>ÉLARA<br />2025</span>
+                <span style={{ fontFamily: "var(--font-serif)", fontSize: 9, color: "#fff", letterSpacing: 1, textAlign: "center", lineHeight: 1.3 }}>RAÍZ<br />2025</span>
             </div>
         </section>
     );

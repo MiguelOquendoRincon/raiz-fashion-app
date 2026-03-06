@@ -27,7 +27,7 @@ export default function Gallery() {
                                 }
                             }}
                         >
-                            <img src={`https://placehold.co/${img.w}/4A6741/F5F0E8?text=Foto+${i + 1}`} alt={`Gallery ${i + 1}`}
+                            <img src={img.img} alt={`Gallery ${i + 1}`}
                                 style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.5s ease, filter 0.5s ease" }} />
                         </div>
                     ))}

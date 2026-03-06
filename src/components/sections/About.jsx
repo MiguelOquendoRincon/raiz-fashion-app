@@ -1,38 +1,37 @@
+import prendaCompleta from "../../assets/prenda_completa.png";
+
 export default function About() {
     return (
         <section id="about" style={{ padding: "var(--section-pad)", background: "var(--color-cream)" }}>
             <div style={{ maxWidth: "var(--container-max-width)", margin: "0 auto", padding: "var(--container-padding)", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
                 {/* Text */}
                 <div>
-                    <p style={{ fontFamily: "var(--font-sans)", fontSize: 11, letterSpacing: 3, color: "var(--color-mid-green)", marginBottom: 16, textTransform: "uppercase" }}>Sobre el proyecto</p>
-                    <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "var(--color-text-dark)", fontWeight: 400, lineHeight: 1.3, marginBottom: 28 }}>
-                        Explorar la colección<br />desde sus orígenes
+                    <p style={{ fontFamily: "var(--font-sans)", fontSize: 11, letterSpacing: 3, color: "var(--color-mid-green)", marginBottom: 16, textTransform: "uppercase" }}>Nuestra Esencia</p>
+                    <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--color-text-dark)", fontWeight: 400, lineHeight: 1.2, marginBottom: 28 }}>
+                        RAÍZ nace del cuidado
                     </h2>
-                    <p style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "var(--color-text-mid)", lineHeight: 1.85, marginBottom: 20 }}>
-                        En un mundo que avanza demasiado rápido, esta colección propone un refugio. Aquí, los tejidos ancestrales, las siluetas orgánicas y los procesos artesanales invitan a pausar, escuchar y recordar el lugar del cuerpo en el diseño.
-                    </p>
-                    <p style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "var(--color-text-mid)", lineHeight: 1.85, marginBottom: 40 }}>
-                        Ya sea que vengas por la técnica, la narrativa o simplemente por la belleza de la forma, cada pieza es una oportunidad de reconectar con lo esencial.
-                    </p>
-                    <a href="#collection" style={{
-                        fontFamily: "var(--font-sans)", fontSize: 11, letterSpacing: 3, padding: "14px 36px",
-                        background: "var(--color-dark-green)", color: "#fff", textDecoration: "none", display: "inline-block",
-                        transition: "opacity 0.2s",
-                    }}
-                        onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
-                        onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
-                    >EXPLORAR COLECCIÓN</a>
+                    <div style={{ fontFamily: "var(--font-sans)", fontSize: 15, color: "var(--color-text-mid)", lineHeight: 1.8 }}>
+                        <p style={{ marginBottom: 20 }}>
+                            RAÍZ es una propuesta de diseño consciente creada para proteger la piel y respetar la tierra.
+                            Desarrollamos prendas en <strong>100% algodón orgánico</strong> pensadas especialmente para niños con piel sensible, brindando comodidad, seguridad y libertad de movimiento.
+                        </p>
+                        <p style={{ marginBottom: 20, color: "var(--color-dark-green)", fontWeight: 500 }}>
+                            Creemos que vestir no es solo cubrir el cuerpo. Es una decisión que impacta la salud, el bienestar y el futuro.
+                        </p>
+                        <p>
+                            Cada detalle fue pensado desde el cuidado: por la piel, por la infancia y por el planeta.
+                        </p>
+                    </div>
                 </div>
-                {/* Image placeholder */}
+                {/* Image */}
                 <div style={{ position: "relative" }}>
                     <div style={{
                         width: "100%", aspectRatio: "4/5",
-                        background: "linear-gradient(135deg, #7A8C6E, #3D5A4C)",
                         borderRadius: 4, overflow: "hidden",
+                        boxShadow: "0 20px 40px rgba(0,0,0,0.05)"
                     }}>
-                        <img src="https://placehold.co/560/700/4A6741/F5F0E8?text=About+Photo" alt="About" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                        <img src={prendaCompleta.src || prendaCompleta} alt="Esencia RAÍZ" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
                     </div>
-                    {/* Decorative leaf */}
                     <svg style={{ position: "absolute", bottom: -40, right: -30, opacity: 0.12 }} width="160" height="240" viewBox="0 0 200 300">
                         <path d="M100 0 Q160 80 120 160 Q80 240 100 300 Q40 220 60 140 Q80 60 100 0Z" fill="var(--color-dark-green)" />
                     </svg>
