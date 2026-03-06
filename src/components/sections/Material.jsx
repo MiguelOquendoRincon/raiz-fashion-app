@@ -6,22 +6,23 @@ export default function Material() {
                 {/* Decorative elements side */}
                 <div style={{ position: "relative", order: 2 }}>
                     <div style={{
-                        width: "100%", aspectRatio: "1/1",
+                        width: "130%", aspectRatio: "1/1",
                         background: "var(--color-cream)",
                         borderRadius: "50%",
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
-                        position: "relative"
+                        position: "relative",
+                        overflow: "hidden"
                     }}>
                         <img
-                            src="/assets/prenda_completa.png"
+                            src="/assets/cotton-material.png"
                             alt="Algodón Orgánico"
-                            style={{ width: "90%", height: "90%", objectFit: "contain" }}
+                            style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%" }}
                         />
                         {/* Floating text or icons */}
                         <div style={{
-                            position: "absolute", bottom: "10%", right: "0%",
+                            position: "absolute", bottom: "10%", right: "18%",
                             background: "var(--color-dark-green)", color: "#fff",
                             padding: "12px 20px", borderRadius: 40,
                             fontFamily: "var(--font-sans)", fontSize: 10, letterSpacing: 2
