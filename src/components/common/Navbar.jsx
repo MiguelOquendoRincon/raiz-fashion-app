@@ -24,7 +24,7 @@ export default function Navbar() {
                 {/* Logo */}
                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                     <span style={{ fontSize: 18, color: scrolled ? "var(--color-dark-green)" : "#fff", fontFamily: "var(--font-serif)", letterSpacing: 3, fontWeight: 700 }}>✦ RAÍZ</span>
-                    <span style={{ fontSize: 9, color: scrolled ? "var(--color-text-light)" : "rgba(255,255,255,0.7)", fontFamily: "var(--font-sans)", letterSpacing: 2, display: "block", marginTop: 2 }}>FASHION DESIGN</span>
+                    <span style={{ fontSize: 9, color: scrolled ? "var(--color-text-light)" : "rgba(255,255,255,0.7)", fontFamily: "var(--font-sans)", letterSpacing: 2, display: "block", marginTop: 2 }}>DISEÑO CONSCIENTE</span>
                 </div>
                 {/* Desktop links */}
                 <div style={{ display: "flex", gap: 36 }}>
