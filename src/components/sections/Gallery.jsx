@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+import { Reveal } from "../common/Reveal";
 import { GALLERY_ITEMS } from "../../data/gallery";
 
 export default function Gallery() {
@@ -5,31 +7,35 @@ export default function Gallery() {
         <section id="gallery" style={{ padding: "var(--section-pad)", background: "var(--color-cream)" }}>
             <div className="section-container">
                 <div style={{ textAlign: "center", marginBottom: 56 }}>
-                    <p style={{ fontFamily: "var(--font-sans)", fontSize: 11, letterSpacing: 3, color: "var(--color-mid-green)", marginBottom: 12 }}>LOOKBOOK</p>
-                    <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "var(--color-text-dark)", fontWeight: 400 }}>Galería</h2>
-                    <div style={{ width: 48, height: 1, background: "var(--color-dark-green)", margin: "20px auto 0" }} />
+                    <Reveal delay={0.1} width="100%">
+                        <p style={{ fontFamily: "var(--font-sans)", fontSize: 11, letterSpacing: 3, color: "var(--color-mid-green)", marginBottom: 12, textTransform: "uppercase" }}>Visuales</p>
+                    </Reveal>
+                    <Reveal delay={0.2} width="100%">
+                        <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "var(--color-text-dark)", fontWeight: 400 }}>Galería de Proceso</h2>
+                    </Reveal>
                 </div>
-                <div className="gallery-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
-                    {GALLERY_ITEMS.map((img, i) => (
-                        <div key={i} className="gallery-item" style={{ gridColumn: img.span, overflow: "hidden", borderRadius: 4, cursor: "pointer", aspectRatio: img.span === "span 2" ? "2/1" : "1/1" }}
-                            onMouseEnter={e => {
-                                const imgEl = e.currentTarget.querySelector("img");
-                                if (imgEl) {
-                                    imgEl.style.transform = "scale(1.05)";
-                                    imgEl.style.filter = "brightness(0.85)";
-                                }
-                            }}
-                            onMouseLeave={e => {
-                                const imgEl = e.currentTarget.querySelector("img");
-                                if (imgEl) {
-                                    imgEl.style.transform = "scale(1)";
-                                    imgEl.style.filter = "brightness(1)";
-                                }
-                            }}
-                        >
-                            <img src={img.img} alt={`Gallery ${i + 1}`}
-                                style={{ width: "100%", height: "100%", objectFit: "cover", display: "block", transition: "transform 0.5s ease, filter 0.5s ease" }} />
-                        </div>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 20 }} className="gallery-grid">
+                    {GALLERY_ITEMS.map((item, idx) => (
+                        <Reveal key={item.img} delay={idx * 0.1} y={30} width="100%">
+                            <motion.div
+                                whileHover={{ scale: 0.98 }}
+                                transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
+                                style={{
+                                    gridColumn: `span ${item.span || 1}`,
+                                    aspectRatio: item.span === 2 ? "2/1" : "1/1",
+                                    borderRadius: 4, overflow: "hidden",
+                                    boxShadow: "0 10px 30px rgba(0,0,0,0.05)",
+                                    position: "relative"
+                                }}
+                                className="gallery-item"
+                            >
+                                <motion.img
+                                    whileHover={{ scale: 1.1 }}
+                                    transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
+                                    src={item.img} alt={`Gallery ${item.id}`} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
+                                />
+                            </motion.div>
+                        </Reveal>
                     ))}
                 </div>
             </div>

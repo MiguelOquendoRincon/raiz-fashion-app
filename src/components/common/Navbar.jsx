@@ -1,15 +1,24 @@
 "use client";
 import { useState, useEffect } from "react";
-import { NAV_LINKS } from "../../data/navigation";
+import { motion, AnimatePresence } from "framer-motion";
+
+const NAV_LINKS = [
+    { label: "INICIO", href: "#home" },
+    { label: "NOSOTROS", href: "#about" },
+    { label: "MATERIAL", href: "#material" },
+    { label: "COLECCIÓN", href: "#collection" },
+    { label: "GALERÍA", href: "#gallery" },
+    { label: "CUIDADOS", href: "#care" },
+];
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     useEffect(() => {
-        const handler = () => setScrolled(window.scrollY > 40);
-        window.addEventListener("scroll", handler);
-        return () => window.removeEventListener("scroll", handler);
+        const handleScroll = () => setScrolled(window.scrollY > 50);
+        window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
     return (
@@ -18,31 +27,41 @@ export default function Navbar() {
             background: scrolled || mobileMenuOpen ? "rgba(245,240,232,0.98)" : "transparent",
             backdropFilter: scrolled || mobileMenuOpen ? "blur(8px)" : "none",
             borderBottom: (scrolled || mobileMenuOpen) ? "1px solid var(--color-border)" : "none",
-            transition: "all 0.4s ease",
+            transition: "all 0.6s cubic-bezier(0.16, 1, 0.3, 1)",
             padding: "0 24px",
         }}>
             <div style={{ maxWidth: "var(--container-max-width)", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", height: 72 }}>
                 {/* Logo */}
-                <a href="#home" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
+                <motion.a
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    href="#home" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}
+                >
                     <img src="/assets/brand_logo.png" alt="Raíz Logo" style={{ height: 44, width: "auto", objectFit: "contain", filter: (scrolled || mobileMenuOpen) ? "none" : "brightness(0) invert(1)" }} />
                     <div className="hide-mobile">
                         <span style={{ fontSize: 16, color: (scrolled || mobileMenuOpen) ? "var(--color-dark-green)" : "#fff", fontFamily: "var(--font-serif)", letterSpacing: 2, fontWeight: 600, display: "block" }}>RAÍZ</span>
                         <span style={{ fontSize: 8, color: (scrolled || mobileMenuOpen) ? "var(--color-text-light)" : "rgba(255,255,255,0.7)", fontFamily: "var(--font-sans)", letterSpacing: 1, textTransform: "uppercase" }}>Diseño Consciente</span>
                     </div>
-                </a>
+                </motion.a>
 
                 {/* Desktop links */}
-                <div className="hide-mobile" style={{ display: "flex", gap: 36 }}>
+                <div className="hide-mobile" style={{ display: "flex", gap: 32 }}>
                     {NAV_LINKS.map(l => (
-                        <a key={l.label} href={l.href} style={{
-                            fontFamily: "var(--font-sans)", fontSize: 10, letterSpacing: 2,
-                            color: (scrolled) ? "var(--color-text-dark)" : "#fff",
-                            textDecoration: "none", fontWeight: 600,
-                            transition: "opacity 0.2s",
-                        }}
-                            onMouseEnter={e => (e.currentTarget.style.opacity = "0.6")}
-                            onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
-                        >{l.label}</a>
+                        <motion.a
+                            key={l.label}
+                            href={l.href}
+                            whileHover={{ y: -2 }}
+                            style={{
+                                fontFamily: "var(--font-sans)", fontSize: 10, letterSpacing: 2,
+                                color: (scrolled) ? "var(--color-text-dark)" : "#fff",
+                                textDecoration: "none", fontWeight: 600,
+                                transition: "color 0.3s",
+                                position: "relative"
+                            }}
+                        >
+                            {l.label}
+                            {/* Hover line would go here if needed */}
+                        </motion.a>
                     ))}
                 </div>
 
@@ -53,36 +72,51 @@ export default function Navbar() {
                         display: "none",
                         background: "none", border: "none", cursor: "pointer",
                         width: 24, height: 24, padding: 0,
-                        flexDirection: "column", justifyContent: "space-between"
+                        flexDirection: "column", justifyContent: "center", gap: 6
                     }}
                     className="mobile-toggle"
                 >
-                    <div style={{ width: "100%", height: 1, background: (scrolled || mobileMenuOpen) ? "var(--color-dark-green)" : "#fff", transition: "0.3s" }} />
-                    <div style={{ width: "100%", height: 1, background: (scrolled || mobileMenuOpen) ? "var(--color-dark-green)" : "#fff", transition: "0.3s" }} />
+                    <motion.div animate={{ rotate: mobileMenuOpen ? 45 : 0, y: mobileMenuOpen ? 7.5 : 0 }} style={{ width: "100%", height: 1.5, background: (scrolled || mobileMenuOpen) ? "var(--color-dark-green)" : "#fff" }} />
+                    <motion.div animate={{ opacity: mobileMenuOpen ? 0 : 1 }} style={{ width: "100%", height: 1.5, background: (scrolled || mobileMenuOpen) ? "var(--color-dark-green)" : "#fff" }} />
+                    <motion.div animate={{ rotate: mobileMenuOpen ? -45 : 0, y: mobileMenuOpen ? -7.5 : 0 }} style={{ width: "100%", height: 1.5, background: (scrolled || mobileMenuOpen) ? "var(--color-dark-green)" : "#fff" }} />
                 </button>
             </div>
 
             {/* Mobile Menu Overlay */}
-            {mobileMenuOpen && (
-                <div style={{
-                    position: "absolute", top: 72, left: 0, right: 0,
-                    background: "rgba(245,240,232,0.98)",
-                    padding: "40px 24px",
-                    display: "flex", flexDirection: "column", gap: 24,
-                    borderBottom: "1px solid var(--color-border)",
-                    animation: "fadeIn 0.3s ease-out"
-                }}>
-                    {NAV_LINKS.map(l => (
-                        <a key={l.label} href={l.href}
-                            onClick={() => setMobileMenuOpen(false)}
-                            style={{
-                                fontFamily: "var(--font-sans)", fontSize: 13, letterSpacing: 3,
-                                color: "var(--color-text-dark)",
-                                textDecoration: "none", fontWeight: 500,
-                            }}>{l.label}</a>
-                    ))}
-                </div>
-            )}
+            <AnimatePresence>
+                {mobileMenuOpen && (
+                    <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                        style={{
+                            position: "absolute", top: 72, left: 0, right: 0,
+                            background: "rgba(245,240,232,0.98)",
+                            padding: "40px 24px",
+                            display: "flex", flexDirection: "column", gap: 24,
+                            borderBottom: "1px solid var(--color-border)",
+                            boxShadow: "0 20px 40px rgba(0,0,0,0.05)"
+                        }}
+                    >
+                        {NAV_LINKS.map((l, i) => (
+                            <motion.a
+                                key={l.label}
+                                href={l.href}
+                                initial={{ opacity: 0, x: -10 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: i * 0.05 }}
+                                onClick={() => setMobileMenuOpen(false)}
+                                style={{
+                                    fontFamily: "var(--font-sans)", fontSize: 13, letterSpacing: 3,
+                                    color: "var(--color-text-dark)",
+                                    textDecoration: "none", fontWeight: 500,
+                                }}
+                            >{l.label}</motion.a>
+                        ))}
+                    </motion.div>
+                )}
+            </AnimatePresence>
 
             <style jsx>{`
                 @media (max-width: 991px) {
