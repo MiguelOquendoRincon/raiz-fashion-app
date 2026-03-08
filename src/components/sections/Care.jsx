@@ -78,10 +78,10 @@ export default function Care() {
                     }}>
                         Cuidar la piel. Cuidar la tierra.<br />Sembrar futuro.
                     </h2>
-                    <div style={{ marginTop: 56, display: "flex", justifyContent: "center", alignItems: "center", gap: 24, opacity: 0.4 }}>
-                        <div style={{ height: 1, width: 40, background: "var(--color-dark-green)" }} />
-                        <span style={{ fontSize: 12, letterSpacing: 6, color: "var(--color-dark-green)", fontWeight: 600 }}>RAÍZ</span>
-                        <div style={{ height: 1, width: 40, background: "var(--color-dark-green)" }} />
+                    <div style={{ marginTop: 56, display: "flex", justifyContent: "center", alignItems: "center", gap: 32, opacity: 0.6 }}>
+                        <div style={{ height: 1, width: 60, background: "var(--color-dark-green)", opacity: 0.3 }} />
+                        <img src="/assets/brand_logo.png" alt="Raíz" style={{ height: 32, width: "auto" }} />
+                        <div style={{ height: 1, width: 60, background: "var(--color-dark-green)", opacity: 0.3 }} />
                     </div>
                 </div>
             </section>

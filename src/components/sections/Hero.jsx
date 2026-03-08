@@ -55,13 +55,13 @@ export default function Hero() {
 
             {/* Badge */}
             <div style={{
-                position: "absolute", bottom: -28, left: "50%", transform: "translateX(-50%)", zIndex: 10,
-                width: 70, height: 70, borderRadius: "50%",
-                background: "var(--color-dark-green)", border: `3px solid var(--color-cream)`,
+                position: "absolute", bottom: -35, left: "50%", transform: "translateX(-50%)", zIndex: 10,
+                width: 90, height: 90, borderRadius: "50%",
+                background: "#fff", border: `2px solid var(--color-border)`,
                 display: "flex", alignItems: "center", justifyContent: "center",
-                flexDirection: "column",
+                boxShadow: "0 12px 24px rgba(0,0,0,0.06)"
             }}>
-                <span style={{ fontFamily: "var(--font-serif)", fontSize: 10, color: "#fff", letterSpacing: 1, textAlign: "center", lineHeight: 1.3 }}>RAÍZ<br />2025</span>
+                <img src="/assets/brand_logo.png" alt="Raíz" style={{ width: "70%", height: "auto" }} />
             </div>
         </section>
     );

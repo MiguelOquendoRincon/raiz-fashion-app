@@ -23,10 +23,13 @@ export default function Navbar() {
         }}>
             <div style={{ maxWidth: "var(--container-max-width)", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", height: 72 }}>
                 {/* Logo */}
-                <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                    <span style={{ fontSize: 18, color: (scrolled || mobileMenuOpen) ? "var(--color-dark-green)" : "#fff", fontFamily: "var(--font-serif)", letterSpacing: 3, fontWeight: 700 }}>✦ RAÍZ</span>
-                    <span style={{ fontSize: 8, color: (scrolled || mobileMenuOpen) ? "var(--color-text-light)" : "rgba(255,255,255,0.7)", fontFamily: "var(--font-sans)", letterSpacing: 2, display: "block", marginTop: 2, textTransform: "uppercase" }}>Diseño Consciente</span>
-                </div>
+                <a href="#home" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}>
+                    <img src="/assets/brand_logo.png" alt="Raíz Logo" style={{ height: 44, width: "auto", objectFit: "contain", filter: (scrolled || mobileMenuOpen) ? "none" : "brightness(0) invert(1)" }} />
+                    <div className="hide-mobile">
+                        <span style={{ fontSize: 16, color: (scrolled || mobileMenuOpen) ? "var(--color-dark-green)" : "#fff", fontFamily: "var(--font-serif)", letterSpacing: 2, fontWeight: 600, display: "block" }}>RAÍZ</span>
+                        <span style={{ fontSize: 8, color: (scrolled || mobileMenuOpen) ? "var(--color-text-light)" : "rgba(255,255,255,0.7)", fontFamily: "var(--font-sans)", letterSpacing: 1, textTransform: "uppercase" }}>Diseño Consciente</span>
+                    </div>
+                </a>
 
                 {/* Desktop links */}
                 <div className="hide-mobile" style={{ display: "flex", gap: 36 }}>
