@@ -4,9 +4,10 @@ import Navbar from "../components/common/Navbar";
 import Footer from "../components/common/Footer";
 import Hero from "../components/sections/Hero";
 import About from "../components/sections/About";
+import Material from "../components/sections/Material";
 import Collection from "../components/sections/Collection";
+import Care from "../components/sections/Care";
 import Gallery from "../components/sections/Gallery";
-import Process from "../components/sections/Process";
 import Contact from "../components/sections/Contact";
 
 export default function Home() {
@@ -15,9 +16,10 @@ export default function Home() {
             <Navbar />
             <Hero />
             <About />
+            <Material />
             <Collection />
+            <Care />
             <Gallery />
-            <Process />
             <Contact />
             <Footer />
         </div>

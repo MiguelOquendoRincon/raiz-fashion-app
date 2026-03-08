@@ -9,8 +9,8 @@
     --color-border: #D9D3C7;
 
     /* Typography */
-    --font-serif: 'Georgia', 'Times New Roman', serif;
-    --font-sans: 'Helvetica Neue', Arial, sans-serif;
+    --font-serif: var(--font-serif), serif;
+    --font-sans: var(--font-sans), sans-serif;
 
     /* Spacing */
     --section-pad: 96px 0;

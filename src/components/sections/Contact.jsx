@@ -9,7 +9,7 @@ export default function Contact() {
                 <p style={{ fontFamily: "var(--font-sans)", fontSize: 14, color: "var(--color-text-mid)", lineHeight: 1.8, marginBottom: 48 }}>
                     Si tienes preguntas sobre la colección, el proceso creativo o simplemente quieres conectar, estamos disponibles.
                 </p>
-                <div style={{ display: "flex", gap: 12, justifyContent: "center", marginBottom: 48 }}>
+                {/* <div style={{ display: "flex", gap: 12, justifyContent: "center", marginBottom: 48 }}>
                     {["Instagram", "Behance", "Email"].map(s => (
                         <a key={s} href="#" style={{
                             fontFamily: "var(--font-sans)", fontSize: 11, letterSpacing: 2, padding: "13px 28px",
@@ -28,7 +28,7 @@ export default function Contact() {
                             }}
                         >{s.toUpperCase()}</a>
                     ))}
-                </div>
+                </div> */}
                 <div style={{ width: 48, height: 1, background: "var(--color-border)", margin: "0 auto" }} />
             </div>
         </section>
