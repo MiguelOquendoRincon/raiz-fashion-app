@@ -27,7 +27,7 @@ export default function About() {
                     </Reveal>
                     <Reveal delay={0.4}>
                         <p style={{ fontFamily: "var(--font-serif)", fontSize: 18, color: "var(--color-dark-green)", lineHeight: 1.5, marginBottom: 24, fontStyle: "italic" }}>
-                            "Creemos que vestir no es solo cubrir el cuerpo. Es una decisión que impacta la salud, el bienestar y el futuro."
+                            &quot;Creemos que vestir no es solo cubrir el cuerpo. Es una decisión que impacta la salud, el bienestar y el futuro.&quot;
                         </p>
                     </Reveal>
                     <Reveal delay={0.5}>

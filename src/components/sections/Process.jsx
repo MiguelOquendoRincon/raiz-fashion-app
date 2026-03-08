@@ -1,4 +1,3 @@
-import { motion } from "framer-motion";
 import { Reveal } from "../common/Reveal";
 import { PROCESS_STEPS } from "../../data/process";
 
