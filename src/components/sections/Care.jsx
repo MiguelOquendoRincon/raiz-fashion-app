@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { Reveal } from "../common/Reveal";
-import { Sun, Droplets, Wind, Heart } from "lucide-react";
+import { Sun, Droplets, Wind } from "lucide-react";
 
 export default function Care() {
     const steps = [
