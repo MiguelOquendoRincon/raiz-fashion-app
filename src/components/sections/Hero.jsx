@@ -23,19 +23,22 @@ export default function Hero() {
             </svg>
 
             {/* Content */}
-            <div style={{ position: "relative", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100%", textAlign: "center", padding: "0 24px" }}>
-                <p style={{ fontFamily: "var(--font-sans)", fontSize: 12, letterSpacing: 4, color: "rgba(255,255,255,0.75)", marginBottom: 24, textTransform: "uppercase" }}>
+            <div className="section-container" style={{ position: "relative", zIndex: 2, display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", height: "100%", textAlign: "center" }}>
+                <p style={{ fontFamily: "var(--font-sans)", fontSize: "clamp(10px, 2vw, 12px)", letterSpacing: 4, color: "rgba(255,255,255,0.75)", marginBottom: 24, textTransform: "uppercase" }}>
                     Piel sensible · Algodón Orgánico · Cuidado Consciente
                 </p>
+                <p style={{ fontFamily: "var(--font-sans)", fontSize: "clamp(10px, 2vw, 12px)", letterSpacing: 4, color: "rgba(255,255,255,0.75)", marginBottom: 24, textTransform: "uppercase" }}>
+                    Derly Yuliana Barrios Flores · Karol Julieth Márquez Camacho
+                </p>
                 <h1 style={{
-                    fontFamily: "var(--font-serif)", fontSize: "clamp(2.4rem, 6vw, 4.5rem)",
+                    fontFamily: "var(--font-serif)", fontSize: "clamp(2.2rem, 8vw, 4.5rem)",
                     color: "#fff", lineHeight: 1.1, maxWidth: 850,
                     fontWeight: 400, margin: "0 0 28px",
                     textShadow: "0 2px 24px rgba(0,0,0,0.3)",
                 }}>
                     Raíz nace del cuidado
                 </h1>
-                <p style={{ fontFamily: "var(--font-sans)", fontSize: 16, color: "rgba(255,255,255,0.85)", letterSpacing: 0.5, marginBottom: 48, maxWidth: 540, lineHeight: 1.6 }}>
+                <p style={{ fontFamily: "var(--font-sans)", fontSize: "clamp(14px, 3vw, 16px)", color: "rgba(255,255,255,0.85)", letterSpacing: 0.5, marginBottom: 48, maxWidth: 540, lineHeight: 1.6 }}>
                     Protegiendo la piel de los más pequeños mientras respetamos el pulso de la tierra.
                 </p>
                 <div style={{ display: "flex", gap: 16 }}>

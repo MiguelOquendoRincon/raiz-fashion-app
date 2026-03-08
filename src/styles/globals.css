@@ -31,3 +31,59 @@ a {
     color: inherit;
     text-decoration: none;
 }
+
+/* Responsive Utilities */
+.section-container {
+    max-width: var(--container-max-width);
+    margin: 0 auto;
+    padding: var(--container-padding);
+}
+
+.responsive-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+@media (max-width: 991px) {
+    .responsive-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --section-pad: 80px 0;
+        --container-padding: 0 24px;
+    }
+
+    .responsive-grid {
+        gap: 40px;
+    }
+
+    .hide-mobile {
+        display: none !important;
+    }
+
+    .mobile-center {
+        text-align: center;
+    }
+
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+
+    .gallery-item {
+        grid-column: span 1 !important;
+        aspect-ratio: 1/1 !important;
+    }
+
+    footer {
+        flex-direction: column !important;
+        gap: 20px;
+        text-align: center;
+        padding: 40px 24px !important;
+    }
+}

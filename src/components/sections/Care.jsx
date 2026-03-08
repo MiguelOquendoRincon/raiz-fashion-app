@@ -13,7 +13,7 @@ export default function Care() {
     return (
         <>
             <section id="care" style={{ padding: "var(--section-pad)", background: "var(--color-cream)", position: "relative" }}>
-                <div style={{ maxWidth: "var(--container-max-width)", margin: "0 auto", padding: "var(--container-padding)" }}>
+                <div className="section-container">
                     <div style={{ textAlign: "center", marginBottom: 72 }}>
                         <p style={{ fontFamily: "var(--font-sans)", fontSize: 10, letterSpacing: 4, color: "var(--color-mid-green)", marginBottom: 16, textTransform: "uppercase", fontWeight: 600 }}>Cuidado de la fibra</p>
                         <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(2rem, 4vw, 3rem)", color: "var(--color-text-dark)", fontWeight: 400, letterSpacing: -0.5 }}>
@@ -22,7 +22,7 @@ export default function Care() {
                         <div style={{ width: 32, height: 1, background: "var(--color-dark-green)", margin: "24px auto 0", opacity: 0.6 }} />
                     </div>
 
-                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: 32 }}>
+                    <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "var(--grid-gap, 32px)" }}>
                         {careSteps.map((step, i) => (
                             <div key={i}
                                 onMouseEnter={e => {

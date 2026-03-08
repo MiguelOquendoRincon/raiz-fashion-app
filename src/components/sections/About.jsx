@@ -1,7 +1,7 @@
 export default function About() {
     return (
         <section id="about" style={{ padding: "var(--section-pad)", background: "var(--color-cream)" }}>
-            <div style={{ maxWidth: "var(--container-max-width)", margin: "0 auto", padding: "var(--container-padding)", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+            <div className="section-container responsive-grid">
                 {/* Text */}
                 {/* Text */}
                 <div>

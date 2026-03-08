@@ -3,13 +3,13 @@ import { COLLECTION_ITEMS } from "../../data/collection";
 export default function Collection() {
     return (
         <section id="collection" style={{ padding: "var(--section-pad)", background: "#fff" }}>
-            <div style={{ maxWidth: "var(--container-max-width)", margin: "0 auto", padding: "var(--container-padding)" }}>
+            <div className="section-container">
                 <div style={{ textAlign: "center", marginBottom: 64 }}>
                     <p style={{ fontFamily: "var(--font-sans)", fontSize: 11, letterSpacing: 3, color: "var(--color-mid-green)", marginBottom: 12, textTransform: "uppercase" }}>Diseño de Modas</p>
                     <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "var(--color-text-dark)", fontWeight: 400 }}>La Colección</h2>
                     <div style={{ width: 48, height: 1, background: "var(--color-dark-green)", margin: "20px auto 0" }} />
                 </div>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 32 }}>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: 32 }}>
                     {COLLECTION_ITEMS.map(item => (
                         <div key={item.id} style={{ cursor: "pointer" }}
                             onMouseEnter={e => {

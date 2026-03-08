@@ -1,12 +1,12 @@
 export default function Material() {
     return (
         <section id="material" style={{ padding: "var(--section-pad)", background: "#fff", overflow: "hidden" }}>
-            <div style={{ maxWidth: "var(--container-max-width)", margin: "0 auto", padding: "var(--container-padding)", display: "grid", gridTemplateColumns: "1fr 1fr", gap: 80, alignItems: "center" }}>
+            <div className="section-container responsive-grid">
 
                 {/* Decorative elements side */}
                 <div style={{ position: "relative", order: 2 }}>
                     <div style={{
-                        width: "130%", aspectRatio: "1/1",
+                        width: "100%", maxWidth: "400px", aspectRatio: "1/1",
                         background: "var(--color-cream)",
                         borderRadius: "50%",
                         display: "flex",

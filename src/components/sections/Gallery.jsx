@@ -3,15 +3,15 @@ import { GALLERY_ITEMS } from "../../data/gallery";
 export default function Gallery() {
     return (
         <section id="gallery" style={{ padding: "var(--section-pad)", background: "var(--color-cream)" }}>
-            <div style={{ maxWidth: "var(--container-max-width)", margin: "0 auto", padding: "var(--container-padding)" }}>
+            <div className="section-container">
                 <div style={{ textAlign: "center", marginBottom: 56 }}>
                     <p style={{ fontFamily: "var(--font-sans)", fontSize: 11, letterSpacing: 3, color: "var(--color-mid-green)", marginBottom: 12 }}>LOOKBOOK</p>
                     <h2 style={{ fontFamily: "var(--font-serif)", fontSize: "clamp(1.8rem, 3.5vw, 2.8rem)", color: "var(--color-text-dark)", fontWeight: 400 }}>Galería</h2>
                     <div style={{ width: 48, height: 1, background: "var(--color-dark-green)", margin: "20px auto 0" }} />
                 </div>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
+                <div className="gallery-grid" style={{ display: "grid", gridTemplateColumns: "repeat(4, 1fr)", gap: 12 }}>
                     {GALLERY_ITEMS.map((img, i) => (
-                        <div key={i} style={{ gridColumn: img.span, overflow: "hidden", borderRadius: 4, cursor: "pointer" }}
+                        <div key={i} className="gallery-item" style={{ gridColumn: img.span, overflow: "hidden", borderRadius: 4, cursor: "pointer", aspectRatio: img.span === "span 2" ? "2/1" : "1/1" }}
                             onMouseEnter={e => {
                                 const imgEl = e.currentTarget.querySelector("img");
                                 if (imgEl) {
