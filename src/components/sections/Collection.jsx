@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Reveal } from "../common/Reveal";
 import { COLLECTION_ITEMS } from "../../data/collection";
 
@@ -24,18 +25,29 @@ export default function Collection() {
                                 whileHover={{ y: -10 }}
                                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                                 style={{ cursor: "pointer" }}
-                                onMouseEnter={e => {
-                                    const img = e.currentTarget.querySelector("img");
-                                    if (img) img.style.transform = "scale(1.08)";
-                                }}
-                                onMouseLeave={e => {
-                                    const img = e.currentTarget.querySelector("img");
-                                    if (img) img.style.transform = "scale(1)";
-                                }}
                             >
-                                <div style={{ overflow: "hidden", borderRadius: 4, marginBottom: 20, aspectRatio: "3/4", boxShadow: "0 15px 35px rgba(0,0,0,0.05)" }}>
-                                    <img src={item.img} alt={item.title}
-                                        style={{ width: "100%", height: "100%", objectFit: "cover", transition: "transform 0.8s cubic-bezier(0.16, 1, 0.3, 1)", display: "block" }} />
+                                <div style={{
+                                    overflow: "hidden",
+                                    borderRadius: 4,
+                                    marginBottom: 20,
+                                    aspectRatio: "3/4",
+                                    boxShadow: "0 15px 35px rgba(0,0,0,0.05)",
+                                    position: "relative"
+                                }}>
+                                    <motion.div
+                                        whileHover={{ scale: 1.05 }}
+                                        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+                                        style={{ width: "100%", height: "100%", position: "relative" }}
+                                    >
+                                        <Image
+                                            src={item.img}
+                                            alt={item.title}
+                                            fill
+                                            sizes="(max-width: 768px) 100vw, 33vw"
+                                            style={{ objectFit: "cover" }}
+                                            quality={80}
+                                        />
+                                    </motion.div>
                                 </div>
                                 <p style={{ fontFamily: "var(--font-sans)", fontSize: 10, letterSpacing: 2, color: "var(--color-mid-green)", marginBottom: 8 }}>0{item.id}</p>
                                 <h3 style={{ fontFamily: "var(--font-serif)", fontSize: "1.1rem", color: "var(--color-text-dark)", fontWeight: 400, marginBottom: 10 }}>{item.title}</h3>

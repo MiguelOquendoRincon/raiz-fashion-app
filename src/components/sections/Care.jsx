@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Reveal } from "../common/Reveal";
 import { Sun, Droplets, Wind } from "lucide-react";
 
@@ -54,7 +55,7 @@ export default function Care() {
                     <Reveal delay={0.6} width="100%">
                         <div style={{ marginTop: 56, display: "flex", justifyContent: "center", alignItems: "center", gap: 32, opacity: 0.6 }}>
                             <div style={{ height: 1, width: 60, background: "var(--color-dark-green)", opacity: 0.3 }} />
-                            <img src="/assets/brand_logo.png" alt="Raíz" style={{ height: 32, width: "auto" }} />
+                            <Image src="/assets/brand_logo.png" alt="Raíz Logo" width={32} height={32} style={{ height: 32, width: "auto" }} />
                             <div style={{ height: 1, width: 60, background: "var(--color-dark-green)", opacity: 0.3 }} />
                         </div>
                     </Reveal>

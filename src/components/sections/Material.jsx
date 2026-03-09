@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Reveal } from "../common/Reveal";
 
 export default function Material() {
@@ -24,10 +25,12 @@ export default function Material() {
                                 boxShadow: "0 30px 60px rgba(0,0,0,0.08)"
                             }}
                         >
-                            <img
+                            <Image
                                 src="/assets/cotton-material.png"
-                                alt="Algodón Orgánico"
-                                style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "50%" }}
+                                alt="Algodón Orgánico Natural"
+                                fill
+                                sizes="(max-width: 768px) 80vw, 400px"
+                                style={{ objectFit: "cover", borderRadius: "50%" }}
                             />
                             {/* Floating text or icons */}
                             <motion.div
@@ -37,7 +40,8 @@ export default function Material() {
                                     position: "absolute", bottom: "10%", right: "18%",
                                     background: "var(--color-dark-green)", color: "#fff",
                                     padding: "12px 20px", borderRadius: 40,
-                                    fontFamily: "var(--font-sans)", fontSize: 10, letterSpacing: 2
+                                    fontFamily: "var(--font-sans)", fontSize: 10, letterSpacing: 2,
+                                    zIndex: 2
                                 }}
                             >100% ORGÁNICO</motion.div>
                         </motion.div>
