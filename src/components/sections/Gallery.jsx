@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Reveal } from "../common/Reveal";
 import { GALLERY_ITEMS } from "../../data/gallery";
 
@@ -29,11 +30,20 @@ export default function Gallery() {
                                 }}
                                 className="gallery-item"
                             >
-                                <motion.img
-                                    whileHover={{ scale: 1.1 }}
+                                <motion.div
+                                    whileHover={{ scale: 1.05 }}
                                     transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
-                                    src={item.img} alt={`Gallery ${item.id}`} style={{ width: "100%", height: "100%", objectFit: "cover", display: "block" }}
-                                />
+                                    style={{ width: "100%", height: "100%", position: "relative" }}
+                                >
+                                    <Image
+                                        src={item.img}
+                                        alt={`Gallery item ${idx + 1}`}
+                                        fill
+                                        sizes="(max-width: 768px) 50vw, 25vw"
+                                        style={{ objectFit: "cover" }}
+                                        quality={75}
+                                    />
+                                </motion.div>
                             </motion.div>
                         </Reveal>
                     ))}

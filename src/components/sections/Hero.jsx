@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Reveal } from "../common/Reveal";
 
 export default function Hero() {
@@ -11,11 +12,17 @@ export default function Hero() {
                 transition={{ duration: 1.5, ease: [0.16, 1, 0.3, 1] }}
                 style={{
                     position: "absolute", inset: 0,
-                    background: "url('/assets/model-9.jpeg')",
-                    backgroundSize: "cover",
-                    backgroundPosition: "center"
                 }}
-            />
+            >
+                <Image
+                    src="/assets/model-9.jpeg"
+                    alt="Raíz Hero Background"
+                    fill
+                    priority
+                    style={{ objectFit: "cover", objectPosition: "center" }}
+                    quality={90}
+                />
+            </motion.div>
             <div style={{
                 position: "absolute", inset: 0,
                 background: "linear-gradient(160deg, rgba(122, 140, 110, 0.4) 0%, rgba(61, 90, 76, 0.6) 40%, rgba(28, 46, 40, 0.8) 100%)",
@@ -93,7 +100,7 @@ export default function Hero() {
                 display: "flex", alignItems: "center", justifyContent: "center",
                 boxShadow: "0 12px 24px rgba(0,0,0,0.06)"
             }}>
-                <img src="/assets/brand_logo.png" alt="Raíz" style={{ width: "70%", height: "auto" }} />
+                <Image src="/assets/brand_logo.png" alt="Raíz" width={63} height={63} style={{ width: "70%", height: "auto" }} />
             </div>
         </section>
     );

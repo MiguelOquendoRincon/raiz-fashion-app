@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { Reveal } from "../common/Reveal";
 
 export default function About() {
@@ -44,12 +45,18 @@ export default function About() {
                             transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
                             style={{
                                 width: "100%", aspectRatio: "4/5",
-                                background: "linear-gradient(135deg, #7A8C6E, #3D5A4C)",
+                                position: "relative",
                                 borderRadius: 4, overflow: "hidden",
                                 boxShadow: "0 20px 40px rgba(0,0,0,0.1)"
                             }}
                         >
-                            <img src="/assets/prenda_completa.png" alt="About" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                            <Image
+                                src="/assets/prenda_completa.png"
+                                alt="Propuesta de diseño Raíz"
+                                fill
+                                sizes="(max-width: 991px) 90vw, 45vw"
+                                style={{ objectFit: "cover" }}
+                            />
                         </motion.div>
                     </Reveal>
                     {/* Decorative leaf */}

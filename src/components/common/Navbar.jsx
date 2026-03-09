@@ -1,5 +1,6 @@
 "use client";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
@@ -37,7 +38,20 @@ export default function Navbar() {
                     whileTap={{ scale: 0.95 }}
                     href="#home" style={{ display: "flex", alignItems: "center", gap: 12, textDecoration: "none" }}
                 >
-                    <img src="/assets/brand_logo.png" alt="Raíz Logo" style={{ height: 44, width: "auto", objectFit: "contain", filter: (scrolled || mobileMenuOpen) ? "none" : "brightness(0) invert(1)" }} />
+                    <div style={{ height: 44, width: "auto", position: "relative", display: "flex", alignItems: "center" }}>
+                        <Image
+                            src="/assets/brand_logo.png"
+                            alt="Raíz Logo"
+                            width={44}
+                            height={44}
+                            style={{
+                                height: 44,
+                                width: "auto",
+                                objectFit: "contain",
+                                filter: (scrolled || mobileMenuOpen) ? "none" : "brightness(0) invert(1)"
+                            }}
+                        />
+                    </div>
                     <div className="hide-mobile">
                         <span style={{ fontSize: 16, color: (scrolled || mobileMenuOpen) ? "var(--color-dark-green)" : "#fff", fontFamily: "var(--font-serif)", letterSpacing: 2, fontWeight: 600, display: "block" }}>RAÍZ</span>
                         <span style={{ fontSize: 8, color: (scrolled || mobileMenuOpen) ? "var(--color-text-light)" : "rgba(255,255,255,0.7)", fontFamily: "var(--font-sans)", letterSpacing: 1, textTransform: "uppercase" }}>Diseño Consciente</span>
